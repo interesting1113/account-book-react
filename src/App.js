@@ -1,6 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { PriceList } from './components/PriceList'
+
+const items = {
+  "id": 1,
+  "title": "无云南旅游",
+  "price": 200,
+  "date": "20220-06-12",
+  "category": {
+    "id": 1,
+    "name": "旅行",
+    "type": "outcome"
+  },
+  "id": 2,
+  "title": "无云南旅游",
+  "price": 400,
+  "date": "20220-06-12",
+  "category": {
+    "id": 1,
+    "name": "旅行",
+    "type": "outcome"
+  }
+}
 
 class App extends Component {
   render() {
@@ -20,6 +42,11 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <PriceList 
+          items={items}
+          onModifyItem={(item) => {alert(item.id)}}
+          onDeleteItem={(item) => {alert(item.id)}}
+        />
       </div>
     );
   }
